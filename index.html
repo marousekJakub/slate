@@ -196,25 +196,22 @@
   color: #f92672;
 }
     </style>
-    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all.js"></script>
+    <link href="stylesheets/screen-a1ce949a.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-bccf8c07.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-c5541673.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar.png" alt="Navbar" />
+        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
+      <img src="images/logo-1e815a84.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -225,19 +222,16 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#stemming" class="toc-h1 toc-link" data-title="Stemming">Stemming</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#plain-text-stemming" class="toc-h2 toc-link" data-title="Plain text stemming">Plain text stemming</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#contract-stemming" class="toc-h2 toc-link" data-title="Contract stemming">Contract stemming</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#semantic-stemming" class="toc-h2 toc-link" data-title="Semantic stemming">Semantic stemming</a>
                   </li>
               </ul>
           </li>
@@ -246,87 +240,30 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+            <li>Maintained by Kuba Maroušek</li>
+            <li><a href='mailto:kuba@ulmo.cz'>kuba@ulmo.cz</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+<p>This is the description of the API of the <code>dp-contracts-all:v5</code> Docker image.</p>
+<h1 id='stemming'>Stemming</h1>
+<p>There are multiple endpoints on text stemming.</p>
+<h2 id='plain-text-stemming'>Plain text stemming</h2><pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl <span class="s2">"localhost:8000/text_stemmer?ngrams=1"</span> <span class="se">\</span>
+     -d<span class="s1">'"Plán starosty městské části Praha-Řeporyje Pavla Novotného postavit pomník vlasovcům vzbudil v Rusku pozornost."'</span>
 </code></pre>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>returns</p>
 </blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="s2">"pl</span><span class="se">\u</span><span class="s2">00e1n"</span><span class="p">,</span><span class="s2">"starosta"</span><span class="p">,</span><span class="s2">"m</span><span class="se">\u</span><span class="s2">011bstsk</span><span class="se">\u</span><span class="s2">00fd"</span><span class="p">,</span><span class="s2">"</span><span class="se">\u</span><span class="s2">010d</span><span class="se">\u</span><span class="s2">00e1st"</span><span class="p">,</span><span class="s2">"praha"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"</span><span class="se">\u</span><span class="s2">0159eporyj"</span><span class="p">,</span><span class="s2">"pavel"</span><span class="p">,</span><span class="s2">"novotn</span><span class="se">\u</span><span class="s2">00fd"</span><span class="p">,</span><span class="s2">"postavit"</span><span class="p">,</span><span class="s2">"pomn</span><span class="se">\u</span><span class="s2">00edk"</span><span class="p">,</span><span class="w">
+     </span><span class="s2">"vlasovec"</span><span class="p">,</span><span class="s2">"vzbudit"</span><span class="p">,</span><span class="s2">"rusko"</span><span class="p">,</span><span class="s2">"pozornost"</span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
+<p>This endpoint takes text sent in the body and stems it. It returns either stemmed single words, or ngrams up to the N equal to 3.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
+<p><code>POST http://localhost:8000/text_stemmer</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -336,100 +273,78 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
+<td>ngrams</td>
 <td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>Number of words in every ngram, between 1 and 3.</td>
 </tr>
 </tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<h2 id='contract-stemming'>Contract stemming</h2><pre class="highlight shell tab-shell"><code><span class="gp">$ </span>cat smlouva.json
+<span class="o">{</span>
+  <span class="s2">"identifikator"</span>: <span class="o">{</span>
+    <span class="s2">"idSmlouvy"</span>: <span class="s2">"1701002"</span>,
+    <span class="s2">"idVerze"</span>: <span class="s2">"9910603"</span>
+  <span class="o">}</span>,
+  <span class="s2">"schvalil"</span>: <span class="s2">""</span>,
+  <span class="s2">"ciziMena"</span>: null,
+...
+<span class="gp">$ </span>curl <span class="s2">"localhost:8000/stemmer"</span> -d@smlouva.json
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>returns</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="s2">"dohoda"</span><span class="p">,</span><span class="s2">"vyjad</span><span class="se">\u</span><span class="s2">0159ovat_,h"</span><span class="p">,</span><span class="kc">null</span><span class="p">,</span><span class="s2">"</span><span class="se">\u</span><span class="s2">00fapln</span><span class="se">\u</span><span class="s2">00fd"</span><span class="p">,</span><span class="kc">null</span><span class="p">,</span><span class="err">...</span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<p>Stems a given contract in its JSON form (available on the website).</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<p><code>POST http://localhost:8000/stemmer</code></p>
+<h2 id='semantic-stemming'>Semantic stemming</h2><pre class="highlight shell tab-shell"><code><span class="gp">$ </span>curl <span class="s2">"localhost:8000/semantic_stemmer"</span> -d<span class="s1">'"Andrej Babiš je Slovák z STB."'</span>
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>returns</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+     </span><span class="p">{</span><span class="s2">"abbr"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="s2">"name_type"</span><span class="p">:</span><span class="s2">"Giv"</span><span class="p">,</span><span class="s2">"pos"</span><span class="p">:</span><span class="s2">"PROPN"</span><span class="p">,</span><span class="s2">"word_orig"</span><span class="p">:</span><span class="s2">"Andrej"</span><span class="p">,</span><span class="s2">"word_stemmed"</span><span class="p">:</span><span class="s2">"Andrej"</span><span class="p">},</span><span class="w">
+     </span><span class="p">{</span><span class="s2">"abbr"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="s2">"name_type"</span><span class="p">:</span><span class="s2">"Sur"</span><span class="p">,</span><span class="s2">"pos"</span><span class="p">:</span><span class="s2">"PROPN"</span><span class="p">,</span><span class="s2">"word_orig"</span><span class="p">:</span><span class="s2">"Babi</span><span class="se">\u</span><span class="s2">0161"</span><span class="p">,</span><span class="s2">"word_stemmed"</span><span class="p">:</span><span class="s2">"Babi</span><span class="se">\u</span><span class="s2">0161"</span><span class="p">},</span><span class="w">
+     </span><span class="p">{</span><span class="s2">"abbr"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="s2">"name_type"</span><span class="p">:</span><span class="s2">"None"</span><span class="p">,</span><span class="s2">"pos"</span><span class="p">:</span><span class="s2">"VERB"</span><span class="p">,</span><span class="s2">"word_orig"</span><span class="p">:</span><span class="s2">"je"</span><span class="p">,</span><span class="s2">"word_stemmed"</span><span class="p">:</span><span class="s2">"b</span><span class="se">\u</span><span class="s2">00fdt"</span><span class="p">},</span><span class="w">
+     </span><span class="p">{</span><span class="s2">"abbr"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="s2">"name_type"</span><span class="p">:</span><span class="s2">"Nat"</span><span class="p">,</span><span class="s2">"pos"</span><span class="p">:</span><span class="s2">"PROPN"</span><span class="p">,</span><span class="s2">"word_orig"</span><span class="p">:</span><span class="s2">"Slov</span><span class="se">\u</span><span class="s2">00e1k"</span><span class="p">,</span><span class="s2">"word_stemmed"</span><span class="p">:</span><span class="s2">"Slov</span><span class="se">\u</span><span class="s2">00e1k"</span><span class="p">},</span><span class="w">
+     </span><span class="p">{</span><span class="s2">"abbr"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="s2">"name_type"</span><span class="p">:</span><span class="s2">"Com"</span><span class="p">,</span><span class="s2">"pos"</span><span class="p">:</span><span class="s2">"PROPN"</span><span class="p">,</span><span class="s2">"word_orig"</span><span class="p">:</span><span class="s2">"STB"</span><span class="p">,</span><span class="s2">"word_stemmed"</span><span class="p">:</span><span class="s2">"STB"</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<p>Stems single words only (not ngrams) and returns a set of semantic attributes with each stemmed word.</p>
+<h3 id='attributes-for-each-word'>Attributes for each word</h3>
+<p>This is a list of attributes extracted from the output of UdPipe. See all possible attributes at <a href="https://universaldependencies.org/u/feat/">https://universaldependencies.org/u/feat/</a>.</p>
+
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th>Attribute</th>
+<th>Meaning</th>
+<th>Values</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>word_orig</td>
+<td>The original word.</td>
+<td></td>
+</tr>
+<tr>
+<td>word_stemmed</td>
+<td>The stemmed word.</td>
+<td></td>
+</tr>
+<tr>
+<td>abbr</td>
+<td>Whether the word is an abbreviation.</td>
+<td>true / false</td>
+</tr>
+<tr>
+<td>pos</td>
+<td>Part of speech (slovní druh). Only a subset of all possible words is returned, based on their parts.</td>
+<td>NOUN, ADJ (adjective), VERB, PROPN (property noun, a name of something), ADV (adverb)</td>
+</tr>
+<tr>
+<td>name_type</td>
+<td>Type of named entity.</td>
+<td>None (is not a named entity), Geo (geographical), Prs (name of person, unsure whether name or surname), Giv (given name of person), Sur (surname), Nat (nationality), Com (company), Pro (product), Oth (other)</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
@@ -495,9 +410,6 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
     </div>
