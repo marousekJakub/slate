@@ -236,6 +236,17 @@
               </ul>
           </li>
           <li>
+            <a href="#classification-and-finalization" class="toc-h1 toc-link" data-title="Classification and finalization">Classification and finalization</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#classifier" class="toc-h2 toc-link" data-title="Classifier">Classifier</a>
+                  </li>
+                  <li>
+                    <a href="#finalizer" class="toc-h2 toc-link" data-title="Finalizer">Finalizer</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -347,6 +358,12 @@
 <td>None (is not a named entity), Geo (geographical), Prs (name of person, unsure whether name or surname), Giv (given name of person), Sur (surname), Nat (nationality), Com (company), Pro (product), Oth (other)</td>
 </tr>
 </tbody></table>
+<h1 id='classification-and-finalization'>Classification and finalization</h1>
+<p>In order to classify a document, it first must be stemmed through <a href="#contract-stemming">Contract stemming</a> and its output sent to the classifier. The output of classifier is then sent to the finalizer.</p>
+<h2 id='classifier'>Classifier</h2>
+<p>TODO</p>
+<h2 id='finalizer'>Finalizer</h2>
+<p>TODO</p>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
