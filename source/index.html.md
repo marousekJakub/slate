@@ -107,3 +107,15 @@ word_stemmed | The stemmed word. |
 abbr | Whether the word is an abbreviation. | true / false
 pos | Part of speech (slovní druh). Only a subset of all possible words is returned, based on their parts. | NOUN, ADJ (adjective), VERB, PROPN (property noun, a name of something), ADV (adverb)
 name_type | Type of named entity. | None (is not a named entity), Geo (geographical), Prs (name of person, unsure whether name or surname), Giv (given name of person), Sur (surname), Nat (nationality), Com (company), Pro (product), Oth (other)
+
+# Classification and finalization
+
+In order to classify a document, it first must be stemmed through [Contract stemming](#contract-stemming) and its output sent to the classifier. The output of classifier is then sent to the finalizer.
+
+## Classifier
+
+TODO
+
+## Finalizer
+
+TODO
